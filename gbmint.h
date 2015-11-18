@@ -32,7 +32,7 @@
 #include <sys/stat.h>
 
 /* GCC visibility */
-#if defined(__GNUC__) && __GNUC__ >= 4
+#if defined(__GNUC__)
 #define GBM_EXPORT __attribute__ ((visibility("default")))
 #else
 #define GBM_EXPORT
@@ -69,6 +69,7 @@ struct gbm_device {
    struct gbm_bo *(*bo_import)(struct gbm_device *gbm, uint32_t type,
                                void *buffer, uint32_t usage);
    int (*bo_write)(struct gbm_bo *bo, const void *buf, size_t data);
+   int (*bo_get_fd)(struct gbm_bo *bo);
    void (*bo_destroy)(struct gbm_bo *bo);
 
    struct gbm_surface *(*surface_create)(struct gbm_device *gbm,
@@ -110,7 +111,7 @@ struct gbm_backend {
    struct gbm_device *(*create_device)(int fd);
 };
 
-GBM_EXPORT struct gbm_device *
+struct gbm_device *
 _gbm_mesa_get_device(int fd);
 
 #endif
