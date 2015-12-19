@@ -62,6 +62,9 @@ load_backend(const char *name)
       fprintf(stderr, "failed to load module: %s\n", dlerror());
       return NULL;
    }
+   else {
+      fprintf(stderr, "loaded module : %s\n", name);
+   }
 
    return dlsym(module, entrypoint);
 }
@@ -85,7 +88,7 @@ _gbm_create_device(int fd)
       backend = load_backend(backends[i]);
       if (backend == NULL)
          continue;
-      fprintf(stderr, "loaded module: %s\n", backends[i]);
+      fprintf(stderr, "found valid GBM backend : %s\n", backends[i]);
       dev = backend->create_device(fd);
    }
    
