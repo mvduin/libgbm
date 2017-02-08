@@ -4,8 +4,7 @@ libdir=@libdir@
 includedir=@includedir@
 
 Name: gbm
-Description: gbm library
+Description: gbm library for TI sgx
 Version: @PACKAGE_VERSION@
 Libs: -L${libdir} -lgbm
-Libs.private: -ldl
 Cflags: -I${includedir}/gbm

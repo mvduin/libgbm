@@ -22,7 +22,7 @@
 
 # Initialize Autoconf
 AC_PREREQ([2.60])
-AC_INIT([libgbm], [1.0.0], [libgbm])
+AC_INIT([libgbm], [1.0.0], [libgbm-pvr])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS([config.h])
 

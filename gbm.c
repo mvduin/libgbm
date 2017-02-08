@@ -41,7 +41,7 @@
 
 #include "gbm.h"
 #include "gbmint.h"
-#include "backend.h"
+#include "gbm_pvr.h"
 
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof((a)[0]))
 
@@ -121,7 +121,7 @@ gbm_create_device(int fd)
       return NULL;
    }
 
-   gbm = _gbm_create_device(fd);
+   gbm = gbm_pvr_create_device(fd);
    if (gbm == NULL)
       return NULL;
 
