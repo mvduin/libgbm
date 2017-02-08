@@ -41,8 +41,6 @@
  */
 static const char *backends[] = {
       "gbm_pvr.so",
-      "gbm_dri.so",
-      "gbm_gallium_drm.so",
 };
 
 static const void *

@@ -22,8 +22,7 @@
 
 # Initialize Autoconf
 AC_PREREQ([2.60])
-AC_INIT([libgbm], [2.0.0],
-        [https://bugs.freedesktop.org/enter_bug.cgi?product=wayland], [libgbm])
+AC_INIT([libgbm], [1.0.0], [libgbm])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS([config.h])
 
@@ -33,10 +32,6 @@ AM_MAINTAINER_MODE
 
 # Initialize libtool
 AC_PROG_LIBTOOL
-
-# Obtain compiler/linker options for dependencies
-PKG_CHECK_MODULES([LIBUDEV], [libudev])
-PKG_CHECK_MODULES([DRM], [libdrm])
 
 AC_CONFIG_FILES([Makefile gbm.pc])
 AC_OUTPUT
